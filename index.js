@@ -1,11 +1,23 @@
-/*!
- * express
- * Copyright(c) 2009-2013 TJ Holowaychuk
- * Copyright(c) 2013 Roman Shtylman
- * Copyright(c) 2014-2015 Douglas Christopher Wilson
- * MIT Licensed
- */
+// taking the expresss dependencies
+const express=require("express");
+// generate an instance of express by initating an appp
+const app=express();
+const port=4551;
+const hostNmae="localHost";
 
-'use strict';
+// sending the response through express
+app.get('/',(req,res)=>{
+   res.send("Hello World! welcome to the class of expressjs ");
+})
+// for about page 
+app.get('/about',(req,res)=>{
+    res.send("Its the about page ");
+})
+// for contact page 
+app.get('/contact ',(req,res)=>{
+    res.send("Its the contact page ");
+})
 
-module.exports = require('./lib/express');
+app.listen(port,()=>{
+    console.log(`server is running at ${hostNmae}:${port}`);
+})
